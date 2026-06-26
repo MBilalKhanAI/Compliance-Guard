@@ -18,7 +18,7 @@
 
 ---
 
-## Codebase Navigation
+## 📂 Codebase Navigation
 
 > Jump straight to the code that interests you most.
 
@@ -36,7 +36,7 @@
 
 ---
 
-## Core Features
+## ✨ Core Features
 
 ### Citation-First RAG
 
@@ -101,7 +101,7 @@ Every query, response, latency, and compliance mode flag is persisted to SQLite 
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
