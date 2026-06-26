@@ -1,0 +1,80 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+pip-selfcheck.json
+
+# Python Compiler Files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+backend/.env
+frontend/.env
+
+# Local Databases
+*.db
+*.db-journal
+*.sqlite3
+backend/compliance_logs.db
+
+# Ingested/Uploaded Files
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Node.js
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js Build Outputs
+.next/
+out/
+build/
+dist/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Testing and Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Debug and Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+backend/debug_output.txt
+backend/debug_output_2.txt
+backend/debug_output_3.txt
+backend/error.txt
+backend/error_traceback.txt
