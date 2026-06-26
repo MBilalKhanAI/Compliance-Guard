@@ -1,6 +1,6 @@
-﻿<div align="center">
+<div align="center">
 
-# 🛡️ ComplianceGuard
+# ComplianceGuard
 
 ### Enterprise RAG System for Regulatory Intelligence
 
@@ -18,35 +18,35 @@
 
 ---
 
-## 📂 Codebase Navigation
+## Codebase Navigation
 
 > Jump straight to the code that interests you most.
 
 | Area | Path | Description |
 |---|---|---|
-| ⚙️ **Backend API** | [`backend/`](./backend) | FastAPI server, RAG engine, ingestion pipeline |
-| 🖥️ **Frontend UI** | [`frontend/`](./frontend) | Next.js 15 dashboard — chat, analytics, documents |
-| 🤖 **LangGraph RAG** | [`backend/core/graph.py`](./backend/core/graph.py) | Stateful retrieve → generate agentic workflow |
-| 📄 **PDF Ingestion** | [`backend/services/ingestion.py`](./backend/services/ingestion.py) | Loader, chunker, and Pinecone indexer |
-| 💬 **Chat Interface** | [`frontend/components/ChatInterface.tsx`](./frontend/components/ChatInterface.tsx) | Real-time chat with citation rendering |
-| 📊 **Analytics** | [`frontend/app/dashboard/analytics/page.tsx`](./frontend/app/dashboard/analytics/page.tsx) | Query trends and topic distribution charts |
-| 🗄️ **Database Schema** | [`backend/core/database.py`](./backend/core/database.py) | SQLAlchemy models and audit log ORM |
-| 🔧 **Configuration** | [`backend/core/config.py`](./backend/core/config.py) | Environment settings |
-| 🌐 **API Routes** | [`backend/api/routes.py`](./backend/api/routes.py) | Core /ingest and /chat endpoint handlers |
+| **Backend API** | [`backend/`](./backend) | FastAPI server, RAG engine, ingestion pipeline |
+| **Frontend UI** | [`frontend/`](./frontend) | Next.js 15 dashboard — chat, analytics, documents |
+| **LangGraph RAG** | [`backend/core/graph.py`](./backend/core/graph.py) | Stateful retrieve → generate agentic workflow |
+| **PDF Ingestion** | [`backend/services/ingestion.py`](./backend/services/ingestion.py) | Loader, chunker, and Pinecone indexer |
+| **Chat Interface** | [`frontend/components/ChatInterface.tsx`](./frontend/components/ChatInterface.tsx) | Real-time chat with citation rendering |
+| **Analytics** | [`frontend/app/dashboard/analytics/page.tsx`](./frontend/app/dashboard/analytics/page.tsx) | Query trends and topic distribution charts |
+| **Database Schema** | [`backend/core/database.py`](./backend/core/database.py) | SQLAlchemy models and audit log ORM |
+| **Configuration** | [`backend/core/config.py`](./backend/core/config.py) | Environment settings |
+| **API Routes** | [`backend/api/routes.py`](./backend/api/routes.py) | Core /ingest and /chat endpoint handlers |
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-### 🎯 Citation-First RAG
+### Citation-First RAG
 
 Every answer is sourced. In **Strict Compliance Mode**, the system returns `"Insufficient regulatory context found."` rather than generating unsupported text. Citations render as clickable `[Document: Page]` links that open the source PDF to the exact page.
 
-### 🔄 Agentic Workflow via LangGraph
+### Agentic Workflow via LangGraph
 
 The query pipeline is a **stateful graph** with discrete `retrieve` and `generate` nodes built on LangGraph. This architecture is designed to extend into multi-agent patterns (Planner → Researcher → Critic) and self-correction loops without re-architecting the core.
 
-### 📑 Intelligent Document Ingestion
+### Intelligent Document Ingestion
 
 - **Supported formats:** PDF, DOCX
 - **Parser:** `PyPDFLoader` with a custom fault-tolerance patch for malformed font descriptors
@@ -54,11 +54,11 @@ The query pipeline is a **stateful graph** with discrete `retrieve` and `generat
 - **Embeddings:** OpenAI `text-embedding-3-small` at 512 dimensions (Matryoshka-optimized)
 - **Index:** Pinecone Serverless — dense vector search, top-k=5 retrieval
 
-### 📊 Audit Trail & Analytics
+### Audit Trail & Analytics
 
 Every query, response, latency, and compliance mode flag is persisted to SQLite via SQLAlchemy. The dashboard renders 7-day query trends and topic distribution charts powered by Recharts.
 
-### 🖥️ Premium Enterprise UI
+### Premium Enterprise UI
 
 - Glassmorphism dark dashboard built with Next.js 15 + Tailwind CSS
 - Side-by-side chat + PDF viewer with automatic scroll-to-cited-page
@@ -67,7 +67,7 @@ Every query, response, latency, and compliance mode flag is persisted to SQLite 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
@@ -101,7 +101,7 @@ Every query, response, latency, and compliance mode flag is persisted to SQLite 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -185,7 +185,7 @@ Open **http://localhost:3000** in your browser.
 
 ---
 
-## 📋 API Reference
+## API Reference
 
 ### `POST /api/ingest`
 Upload and index a PDF or DOCX document.
@@ -235,7 +235,7 @@ curl -X POST http://localhost:8000/api/chat \
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 complianceguard/
@@ -288,7 +288,7 @@ complianceguard/
 
 ---
 
-## 🔧 Configuration Reference
+## Configuration Reference
 
 ### Compliance Modes
 
@@ -318,34 +318,34 @@ RecursiveCharacterTextSplitter(
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Backend**
 
-| | Technology | Role |
+| Component | Technology | Role |
 |---|---|---|
-| 🚀 | FastAPI 0.110+ | Async REST API framework |
-| 🧠 | LangGraph 0.1+ | Stateful agentic RAG workflow |
-| ⛓️ | LangChain 0.2+ | Prompt templates and output parsing |
-| 🤖 | OpenAI GPT-4o | LLM inference (temperature=0) |
-| 🗄️ | Pinecone Serverless | Dense vector search |
-| 📄 | PyPDF + pdfminer.six | Robust PDF text extraction |
-| 🗃️ | SQLAlchemy 2.0 + SQLite | Async-compatible ORM and audit store |
+| API | FastAPI 0.110+ | Async REST API framework |
+| Agent | LangGraph 0.1+ | Stateful agentic RAG workflow |
+| LLM Ops | LangChain 0.2+ | Prompt templates and output parsing |
+| Inference | OpenAI GPT-4o | LLM inference (temperature=0) |
+| Database | Pinecone Serverless | Dense vector search |
+| Parsing | PyPDF + pdfminer.six | Robust PDF text extraction |
+| ORM | SQLAlchemy 2.0 + SQLite | Async-compatible ORM and audit store |
 
 **Frontend**
 
-| | Technology | Role |
+| Component | Technology | Role |
 |---|---|---|
-| ⚡ | Next.js 15 (App Router) | React Server Components, fast routing |
-| 🔷 | TypeScript 5 | End-to-end type safety |
-| 🎨 | Tailwind CSS 3 | Utility-first responsive styling |
-| 🎬 | Framer Motion | Micro-animations and page transitions |
-| 📈 | Recharts | Analytics visualizations |
-| 🔔 | Zustand | Lightweight global state management |
+| Framework | Next.js 15 (App Router) | React Server Components, fast routing |
+| Language | TypeScript 5 | End-to-end type safety |
+| Styling | Tailwind CSS 3 | Utility-first responsive styling |
+| Animation | Framer Motion | Micro-animations and page transitions |
+| Charts | Recharts | Analytics visualizations |
+| State | Zustand | Lightweight global state management |
 
 ---
 
-## 🐳 Docker (Optional)
+## Docker (Optional)
 
 ```bash
 # Copy and configure secrets first
@@ -360,7 +360,7 @@ docker-compose up --build
 
 ---
 
-## 🔐 Security Notes
+## Security Notes
 
 - API keys loaded exclusively from environment variables — never hardcoded.
 - `.env` is in `.gitignore` and will never be pushed to the repository.
@@ -369,7 +369,7 @@ docker-compose up --build
 
 ---
 
-## 📈 Performance
+## Performance
 
 | Metric | Value |
 |---|---|
@@ -381,7 +381,7 @@ docker-compose up --build
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Multi-user authentication (Clerk / Auth0)
 - [ ] Role-based access control (RBAC)
@@ -394,7 +394,7 @@ docker-compose up --build
 
 ---
 
-## 👤 Author
+## Author
 
 **Muhammad Bilal Khan** — AI/ML Engineer
 
